@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<odoo>
+    <menuitem id="recs_menu_root" name="Reviewing">
+        <menuitem id="access_reviews_list" name="Reviews" action="access_recordings_action">
+            <!-- <menuitem id="test_model_menu_action" action="access_recordings_action" /> -->
+        </menuitem>
+    </menuitem>
+</odoo>
