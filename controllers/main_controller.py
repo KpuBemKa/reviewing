@@ -3,7 +3,7 @@ import logging
 from odoo import http, fields
 from odoo.http import request, Response
 
-from keys import UPLAOD_API_KEY
+from .keys import UPLAOD_API_KEY
 
 
 _logger = logging.getLogger(__name__)
