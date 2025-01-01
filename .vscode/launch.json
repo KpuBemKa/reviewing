@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Odoo",
+            "type": "debugpy",
+            "request": "launch",
+            "stopOnEntry": false,
+            "python": "/opt/odoo17/odoo17-venv/bin/python3",
+            "console": "integratedTerminal",
+            // "program": "/opt/odoo17/odoo17/odoo-bin",
+            "program": "/opt/odoo17/odoo17/odoo-bin",
+            "args": [
+                "-c /etc/odoo17.conf",
+            ],
+            "cwd": "${workspaceRoot}",
+            "env": {},
+            "envFile": "${workspaceRoot}/.env",
+            "sudo": true
+            // "debugOptions": [
+            //     "RedirectOutput"
+            // ]
+        }
+    ]
+}

@@ -8,7 +8,8 @@
     "data": [
         "security/ir.model.access.csv",
         # ---
-        "views/recordings_view.xml",
+        "views/recordings_views.xml",
         "views/recordings_menu.xml",
     ],
+    "controllers": ["controllers.main_controller.MainController"],
 }

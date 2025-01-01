@@ -3,4 +3,5 @@
         "/opt/odoo17/odoo17/",
         "/opt/odoo17/odoo17-custom-addons/"
     ],
+    "python.languageServer": "None",
 }

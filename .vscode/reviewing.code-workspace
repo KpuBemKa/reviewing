@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"uri": "vscode-remote://ssh-remote+139.59.88.189/opt/odoo17/odoo17-custom-addons/reviewing"
+		},
+		{
+			"uri": "vscode-remote://ssh-remote+139.59.88.189/opt/odoo17/odoo17"
+		}
+	],
+    "remoteAuthority": "ssh-remote+139.59.88.189",
+    "settings": {
+        "python.languageServer": "None"
+    }
+}

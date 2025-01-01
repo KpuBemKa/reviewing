@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="recs_access_recordings_action" model="ir.actions.act_window">
+        <field name="name">Reviews</field>
+        <field name="res_model">recs.recordings</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="recs_recordings_view_tree" model="ir.ui.view">
+        <!-- <field name="name">Recordings tree</field> -->
+        <field name="model">recs.recordings</field>
+        <!-- <field name="view_mode">tree,form</field> -->
+        <field name="arch" type="xml">
+            <tree string="Recordings">
+                <field name="rec_name" />
+                <field name="rec_device" />
+                <field name="rec_timestamp" />
+                <!-- <field name="rec_audio_file" /> -->
+                <field name="rec_transcription" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="rec_recordings_view_form" model="ir.ui.view">
+        <!-- <field name="name">crm.lost.reason.form</field> -->
+        <field name="model">recs.recordings</field>
+        <field name="arch" type="xml">
+            <form string="Review">
+                <sheet>
+                    <!-- <div class="oe_button_box" name="button_box">
+                        <button name="action_lost_leads" type="object"
+                            class="oe_stat_button" icon="fa-star">
+                            <div class="o_stat_info">
+                                <field name="leads_count" class="o_stat_value" />
+                                <span class="o_stat_text"> Leads</span>
+                            </div>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}" />
+                    <div class="oe_title">
+                        <div class="oe_edit_only">
+                            <label for="name" />
+                        </div>
+                        <h1 class="mb32">
+                            <field name="name" class="mb16" />
+                        </h1>
+                        <field name="active" invisible="1" />
+                    </div> -->
+                    <group>
+                        <group>
+                            <field name="rec_name" />
+                            <field name="rec_device" />
+                            <field name="rec_timestamp" />
+                        </group>
+                        <group>
+                            <field name="rec_audio_file" filename="rec_filename"/>
+                            <field name="rec_filename" invisible="1"/>
+                            <field name="rec_transcription" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="recs_recordings_view_search" model="ir.ui.view">
+        <!-- <field name="name">delivery.carrier.search</field> -->
+        <field name="model">recs.recordings</field>
+        <field name="arch" type="xml">
+            <search string="Reviews">
+                <field name="rec_name" />
+                <field name="rec_device" />
+                <field name="rec_timestamp" />
+                <field name="rec_transcription" />
+                <separator />
+                <group expand="1" string="Group By">
+                    <filter string="Device" name="device"
+                        context="{'group_by':'rec_device', 'residual_visible':True}" />
+                    <filter string="Date &amp; Time" name="date_time"
+                        context="{'group_by':'rec_timestamp', 'residual_visible':True}" />
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>
