@@ -7,16 +7,18 @@
     </record>
 
     <record id="recs_recordings_view_tree" model="ir.ui.view">
-        <!-- <field name="name">Recordings tree</field> -->
+        <!-- <field name="name"></field> -->
         <field name="model">recs.recordings</field>
         <!-- <field name="view_mode">tree,form</field> -->
         <field name="arch" type="xml">
-            <tree string="Recordings">
-                <field name="rec_name" />
-                <field name="rec_device" />
+            <tree string="Recordings" default_order="rec_timestamp desc">
                 <field name="rec_timestamp" />
-                <!-- <field name="rec_audio_file" /> -->
-                <field name="rec_transcription" />
+
+                <!-- <field name="rec_transcription" widget="expandable_text" options="{'max_length': 150}"/> -->
+                <field name="rec_transcription" widget="expandable_text"/>
+
+                <field name="rec_audio_file" />
+                <field name="rec_device" />
             </tree>
         </field>
     </record>
@@ -49,13 +51,12 @@
                     </div> -->
                     <group>
                         <group>
-                            <field name="rec_name" />
                             <field name="rec_device" />
                             <field name="rec_timestamp" />
                         </group>
                         <group>
-                            <field name="rec_audio_file" filename="rec_filename"/>
-                            <field name="rec_filename" invisible="1"/>
+                            <field name="rec_audio_file" filename="rec_filename" />
+                            <field name="rec_filename" invisible="1" />
                             <field name="rec_transcription" />
                         </group>
                     </group>
@@ -69,7 +70,6 @@
         <field name="model">recs.recordings</field>
         <field name="arch" type="xml">
             <search string="Reviews">
-                <field name="rec_name" />
                 <field name="rec_device" />
                 <field name="rec_timestamp" />
                 <field name="rec_transcription" />

@@ -1,5 +1,6 @@
 import base64
 import logging
+from datetime import datetime, timezone
 from odoo import http, fields
 from odoo.http import request, Response
 
@@ -28,18 +29,23 @@ class MainController(http.Controller):
                 return Response("No file provided", status=400)
 
             # Save the file to the database
-            file_name = kwargs.get("file_name")
+            file_name: str = kwargs.get("file_name")
             file_content = uploaded_file.read()
             transcription = kwargs.get("transcription")
+            timestamp: str = file_name[file_name.find("_") + 1 : file_name.rfind(".")]
+            # print(f"Timestamp: {timestamp}")
 
             new_record = (
                 request.env["recs.recordings"]
                 .sudo()
                 .create(
                     {
-                        "rec_name": f"rec_{file_name}",
-                        "rec_timestamp": fields.Datetime.now(),
-                        "rec_device": "",
+                        "rec_timestamp": fields.Datetime.from_string(
+                            datetime.fromtimestamp(
+                                int(timestamp), tz=timezone.utc
+                            ).strftime("%Y-%m-%d %H:%M:%S")
+                        ),
+                        "rec_device": file_name[: file_name.find("_")],
                         "rec_audio_file": base64.b64encode(file_content).decode(
                             "utf-8"
                         ),

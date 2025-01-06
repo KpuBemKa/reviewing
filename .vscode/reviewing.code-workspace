@@ -9,6 +9,7 @@
 	],
     "remoteAuthority": "ssh-remote+139.59.88.189",
     "settings": {
-        "python.languageServer": "None"
+        "python.languageServer": "None",
+        "python.analysis.typeCheckingMode": "standard"
     }
 }
