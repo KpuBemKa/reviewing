@@ -1,35 +1,13 @@
-// .expandable-text-field .text-content {
-//     white-space: nowrap; /* Prevent text wrapping */
-//     overflow: hidden; /* Hide overflowing text */
-//     text-overflow: ellipsis; /* Show ellipsis for overflowed text */
-//     max-width: 100%; /* Fit within the container */
-//     display: block;
-// }
-
-// .expandable-text-field .text-content.expanded {
-//     white-space: normal; // Allow text wrapping
-//     overflow: visible; // Show full text
-//     text-overflow: unset; // Remove ellipsis 
-// }
-
-// // .expandable-text-field .btn-link {
-// //     padding: 0;
-// //     text-decoration: none;
-// //     font-size: 12px;
-// //     color: #007bff;
-// //     background: none;
-// //     border: none;
-// // }
-
 .o_expandable_text_field {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    // max-width: 400px;
 }
-
 
 .o_expandable_text_field .text-content {
     flex: 1;
+    padding-right: 1%;
     max-width: 100%;
 }
 
@@ -40,8 +18,7 @@
 }
 
 .o_expandable_text_field .btn {
-    margin-left: 10px;
-    font-size: 0.85em;
+    margin-left: 0.5rem;
+    font-size: 0.85rem;
     color: var(--o-primary-color);
 }
-

@@ -11,13 +11,13 @@
         <field name="model">recs.recordings</field>
         <!-- <field name="view_mode">tree,form</field> -->
         <field name="arch" type="xml">
-            <tree string="Recordings" default_order="rec_timestamp desc">
+            <tree string="Recordings" default_order="rec_timestamp desc"  class="o-r-list">
+                <field name="id" column_invisible="True"/>
                 <field name="rec_timestamp" />
-
-                <!-- <field name="rec_transcription" widget="expandable_text" options="{'max_length': 150}"/> -->
                 <field name="rec_transcription" widget="expandable_text"/>
-
-                <field name="rec_audio_file" />
+                <!-- <field name="rec_audio_file" widget="binary" /> -->
+                <!-- <field name="rec_audio_file" widget="audio_binary" /> -->
+                <field name="rec_audio_file" widget="audio" />
                 <field name="rec_device" />
             </tree>
         </field>
@@ -29,26 +29,6 @@
         <field name="arch" type="xml">
             <form string="Review">
                 <sheet>
-                    <!-- <div class="oe_button_box" name="button_box">
-                        <button name="action_lost_leads" type="object"
-                            class="oe_stat_button" icon="fa-star">
-                            <div class="o_stat_info">
-                                <field name="leads_count" class="o_stat_value" />
-                                <span class="o_stat_text"> Leads</span>
-                            </div>
-                        </button>
-                    </div>
-                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}" />
-                    <div class="oe_title">
-                        <div class="oe_edit_only">
-                            <label for="name" />
-                        </div>
-                        <h1 class="mb32">
-                            <field name="name" class="mb16" />
-                        </h1>
-                        <field name="active" invisible="1" />
-                    </div> -->
                     <group>
                         <group>
                             <field name="rec_device" />
@@ -74,6 +54,7 @@
                 <field name="rec_timestamp" />
                 <field name="rec_transcription" />
                 <separator />
+                <filter name="Date" domain="[('rec_timestamp', '&gt;', 0)]"/>
                 <group expand="1" string="Group By">
                     <filter string="Device" name="device"
                         context="{'group_by':'rec_device', 'residual_visible':True}" />
