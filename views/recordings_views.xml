@@ -7,16 +7,12 @@
     </record>
 
     <record id="recs_recordings_view_tree" model="ir.ui.view">
-        <!-- <field name="name"></field> -->
         <field name="model">recs.recordings</field>
-        <!-- <field name="view_mode">tree,form</field> -->
         <field name="arch" type="xml">
             <tree string="Recordings" default_order="rec_timestamp desc"  class="o-r-list">
                 <field name="id" column_invisible="True"/>
                 <field name="rec_timestamp" />
                 <field name="rec_transcription" widget="expandable_text"/>
-                <!-- <field name="rec_audio_file" widget="binary" /> -->
-                <!-- <field name="rec_audio_file" widget="audio_binary" /> -->
                 <field name="rec_audio_file" widget="audio" />
                 <field name="rec_device" />
             </tree>
@@ -24,7 +20,6 @@
     </record>
 
     <record id="rec_recordings_view_form" model="ir.ui.view">
-        <!-- <field name="name">crm.lost.reason.form</field> -->
         <field name="model">recs.recordings</field>
         <field name="arch" type="xml">
             <form string="Review">
@@ -46,7 +41,6 @@
     </record>
 
     <record id="recs_recordings_view_search" model="ir.ui.view">
-        <!-- <field name="name">delivery.carrier.search</field> -->
         <field name="model">recs.recordings</field>
         <field name="arch" type="xml">
             <search string="Reviews">

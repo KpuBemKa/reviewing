@@ -1,7 +1,6 @@
 <templates xml:space="preserve">
     <t t-name="ExpandableTextFieldTemplate">
         <div t-attf-class="o_expandable_text_field {{ state.isExpanded ? 'expanded' : 'collapsed' }}">
-            <!-- Text content with overflow handling -->
             <div
                 t-ref="textContainer"
                 class="text-content"
@@ -9,14 +8,13 @@
                 t-esc="displayText"
             ></div>
 
-            <!-- Expand/Collapse Button placed below the text -->
             <div class="expand-button-container">
                 <button
                     t-if="canExpand"
                     t-on-click.stop.prevent="toggleExpand"
                     class="btn btn-link"
                     t-esc="state.isExpanded ? 'Collapse' : 'Expand'"
-                ></button>
+                />
             </div>
         </div>
     </t>

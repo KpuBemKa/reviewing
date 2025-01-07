@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    // max-width: 400px;
 }
 
 .o_expandable_text_field .text-content {
@@ -12,9 +11,7 @@
 }
 
 .expand-button-container {
-    // margin-top: 8px; /* Adds space between text and button */
     display: flex;
-    // justify-content: center;
 }
 
 .o_expandable_text_field .btn {

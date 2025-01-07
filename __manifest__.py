@@ -1,7 +1,6 @@
 {
     "name": "Reviewing",
     "version": "0.1",
-    # "depends": ["base", "web", "ks_audio"],
     "depends": ["base", "web"],
     "author": "MARS dev",
     "category": "Category",
@@ -9,10 +8,8 @@
     "data": [
         "security/ir.model.access.csv",
         # ---
-        # "views/assets.xml",
         "views/recordings_menu.xml",
         "views/recordings_views.xml",
-        # "views/templates.xml",
     ],
     "assets": {
         "web.assets_backend": [
@@ -25,7 +22,6 @@
             "reviewing/static/src/xml/expandable_text.xml",
             "reviewing/static/src/xml/audio_field.xml",
         ],
-        # "web.assets_qweb": {},
     },
     "controllers": ["controllers.main_controller.MainController"],
 }
