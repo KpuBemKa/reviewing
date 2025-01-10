@@ -13,14 +13,15 @@
     ],
     "assets": {
         "web.assets_backend": [
+            "reviewing/static/src/js/audio_field.js",
+            "reviewing/static/src/js/expandable_text.js",
+            # ---
+            "reviewing/static/src/scss/audio_field.scss",
             "reviewing/static/src/scss/expandable_text.scss",
             "reviewing/static/src/scss/style.scss",
             # ---
-            "reviewing/static/src/js/expandable_text.js",
-            "reviewing/static/src/js/audio_field.js",
-            # ---
-            "reviewing/static/src/xml/expandable_text.xml",
             "reviewing/static/src/xml/audio_field.xml",
+            "reviewing/static/src/xml/expandable_text.xml",
         ],
     },
     "controllers": ["controllers.main_controller.MainController"],

@@ -4,15 +4,16 @@
         <field name="name">Reviews</field>
         <field name="res_model">recs.recordings</field>
         <field name="view_mode">tree,form</field>
+        <!-- <field name="context">{'search_default_date_time_range': True}</field> -->
     </record>
 
     <record id="recs_recordings_view_tree" model="ir.ui.view">
         <field name="model">recs.recordings</field>
         <field name="arch" type="xml">
-            <tree string="Recordings" default_order="rec_timestamp desc"  class="o-r-list">
-                <field name="id" column_invisible="True"/>
+            <tree string="Recordings" default_order="rec_timestamp desc" class="o-r-list">
+                <field name="id" column_invisible="True" />
                 <field name="rec_timestamp" />
-                <field name="rec_transcription" widget="expandable_text"/>
+                <field name="rec_transcription" widget="expandable_text" />
                 <field name="rec_audio_file" widget="audio" />
                 <field name="rec_device" />
             </tree>
@@ -41,14 +42,34 @@
     </record>
 
     <record id="recs_recordings_view_search" model="ir.ui.view">
+        <field name="name">recs.recordings.search</field>
         <field name="model">recs.recordings</field>
         <field name="arch" type="xml">
             <search string="Reviews">
                 <field name="rec_device" />
                 <field name="rec_timestamp" />
                 <field name="rec_transcription" />
+
                 <separator />
-                <filter name="Date" domain="[('rec_timestamp', '&gt;', 0)]"/>
+                <!-- <filter string="Filter by date" date="rec_timestamp" /> -->
+                <filter string="Filter by date" name="filter_rec_date" date="rec_timestamp"
+                    default_period="today" />
+                <filter
+                    string="Custom date range"
+                    name="filter_custom_rec_date"
+                    domain="[('rec_timestamp', '&gt;=', '2000-10-01'), ('rec_timestamp', '&lt;=', '2000-10-01')]"
+                >
+                    <attribute name="domain">[('rec_timestamp', '&gt;=', fields.Datetime.now()),
+                        ('rec_timestamp', '&lt;=', fields.Datetime.now())]</attribute>
+                </filter>
+                <!-- <field name="get_today"/> -->
+                <!-- </filter> -->
+                <!-- context="{'domain': [('rec_timestamp', '&gt;=', today), ('rec_timestamp',
+                '&lt;=', today)]}" -->
+
+                <!-- <separator />
+                <filter name="date_end" date="rec_timestamp" /> -->
+
                 <group expand="1" string="Group By">
                     <filter string="Device" name="device"
                         context="{'group_by':'rec_device', 'residual_visible':True}" />
