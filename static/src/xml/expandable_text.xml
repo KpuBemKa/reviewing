@@ -4,6 +4,7 @@
             <div
                 t-ref="textContainer"
                 class="text-content"
+                t-on-click.stop.prevent="toggleExpand"
                 t-att-style="state.isExpanded ? '' : 'overflow: hidden; text-overflow: ellipsis; white-space: nowrap;'"
                 t-esc="displayText"
             ></div>

@@ -58,10 +58,7 @@
                     string="Custom date range"
                     name="filter_custom_rec_date"
                     domain="[('rec_timestamp', '&gt;=', '2000-10-01'), ('rec_timestamp', '&lt;=', '2000-10-01')]"
-                >
-                    <attribute name="domain">[('rec_timestamp', '&gt;=', fields.Datetime.now()),
-                        ('rec_timestamp', '&lt;=', fields.Datetime.now())]</attribute>
-                </filter>
+                />
                 <!-- <field name="get_today"/> -->
                 <!-- </filter> -->
                 <!-- context="{'domain': [('rec_timestamp', '&gt;=', today), ('rec_timestamp',
